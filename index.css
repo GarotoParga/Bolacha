@@ -1,63 +1,42 @@
 :root {
-    --accent1: #ff6b9a;
-    --accent2: #ffc3a0;
+    --accent1: #6bcfff;
+    --accent2: #4cffc0;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lucida Sans', sans-serif;
 }
 
 html,
 body {
     height: 100%;
     width: 100%;
+    font-family: 'Lucida Sans', sans-serif;
     color: #fff;
     overflow: hidden;
+    background: #0a1f1a;
 }
 
+/* Canvas das partículas */
 #stars {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -3;
-    /* abaixo do overlay e acima do background preto */
+    z-index: 1;
 }
 
-.video-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-    /* acima do canvas de partículas */
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.35);
-    z-index: -1;
-    /* acima do vídeo, faz escurecer um pouco */
-}
-
-
-/* frases animadas */
+/* Frases animadas */
 .phrases {
     position: absolute;
     top: 5%;
     width: 100%;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
+    z-index: 2;
 }
 
 .phrases span {
@@ -78,7 +57,7 @@ body {
     }
 }
 
-/* container central */
+/* Container central */
 .container {
     height: 100%;
     width: 100%;
@@ -87,11 +66,11 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 .heart {
-    font-size: 70px;
+    font-size: 80px;
     animation: pulse 1.6s ease-in-out infinite;
     margin-bottom: 15px;
 }
@@ -110,9 +89,9 @@ body {
     }
 }
 
-/* barra poética */
+/* Barra poética */
 .meter-wrap {
-    width: 280px;
+    width: 300px;
     background: rgba(255, 255, 255, 0.05);
     padding: 6px;
     border-radius: 14px;
@@ -133,8 +112,8 @@ body {
     height: 100%;
     width: 0%;
     border-radius: 10px;
-    background: linear-gradient(90deg, rgba(255, 107, 154, 0.8), rgba(255, 195, 160, 0.8));
-    box-shadow: 0 0 20px rgba(255, 107, 154, 0.5), 0 0 40px rgba(255, 195, 160, 0.3);
+    background: linear-gradient(90deg, rgba(107, 207, 255, 0.8), rgba(76, 255, 192, 0.8));
+    box-shadow: 0 0 20px rgba(107, 207, 255, 0.5), 0 0 40px rgba(76, 255, 192, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,33 +126,34 @@ body {
 .bar::after {
     content: attr(data-stage);
     position: absolute;
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
 }
 
 .bar-external-message {
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 5px;
     font-weight: 600;
 }
 
-/* contador infinito */
+/* Contador infinito */
 .counter {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     text-align: center;
     white-space: pre-line;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
+/* Carrossel */
 .carousel {
     width: 100%;
     height: 150px;
-    position: fixed;
-    bottom: 10px;
-    left: 0;
-    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    z-index: 2;
 }
 
 .slides {
@@ -185,21 +165,14 @@ body {
 }
 
 .slides img {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 14px;
     object-fit: cover;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 0 0 50px rgba(255, 195, 160, 0.4);
-    transition: transform 0.3s, filter 0.3s;
-    filter: brightness(1.1) saturate(1.2);
+    box-shadow: 0 0 15px rgba(107, 207, 255, 0.5);
 }
 
-.slides img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.3) saturate(1.3);
-}
-
-/* mensagem inicial fixa */
+/* Mensagem inicial */
 .message-overlay {
     position: fixed;
     top: 0;
@@ -210,37 +183,37 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 3;
 }
 
 .message-box {
-    background: linear-gradient(145deg, #ff6b9a, #ffc3a0);
+    background: linear-gradient(145deg, #6bcfff, #4cffc0);
     padding: 20px;
     width: 280px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 0 40px rgba(255, 107, 154, 0.6);
+    box-shadow: 0 0 40px rgba(107, 207, 255, 0.6);
 }
 
 .message-box h1 {
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .message-box p {
-    font-size: 12px;
-    margin: 4px 0;
+    font-size: 14px;
+    margin: 5px 0;
 }
 
 .message-box button {
-    margin-top: 8px;
-    padding: 6px 12px;
-    font-size: 12px;
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     background: #fff;
-    color: #ff6b9a;
+    color: #6bcfff;
     font-weight: bold;
     transition: transform 0.2s;
 }

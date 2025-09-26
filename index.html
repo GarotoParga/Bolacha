@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presente para Bolacha</title>
   <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-  <!-- vídeo de fundo -->
-  <video autoplay muted loop class="video-bg" preload="auto">
-    <source src="midias/video.mp4" type="video/mp4">
-    <source src="midias/video.webm" type="video/webm">
-  </video>
-
-  <div class="overlay"></div>
+  <!-- Canvas das partículas -->
   <canvas id="stars"></canvas>
 
-  <!-- frases animadas -->
+  <!-- Frases animadas -->
   <div class="phrases" id="phrases">
     <span id="phraseSpan"></span>
   </div>
 
-  <!-- container central -->
+  <!-- Container central -->
   <div class="container">
     <div class="heart">❣️</div>
 
-    <!-- barra poética -->
+    <!-- Barra poética -->
     <div class="meter-wrap">
       <div class="meter">
         <div class="bar" id="bar"></div>
@@ -35,10 +27,11 @@
       <div class="bar-external-message">Meu amor continuará a crescer ✨</div>
     </div>
 
-    <!-- contador infinito -->
+    <!-- Contador infinito -->
     <div class="counter" id="counter">0 ❤️</div>
   </div>
 
+  <!-- Carrossel -->
   <div class="carousel">
     <div class="slides" id="slides">
       <img src="midias/20241120_060851.jpg" alt="Foto 1">
@@ -50,8 +43,7 @@
     </div>
   </div>
 
-
-  <!-- mensagem inicial -->
+  <!-- Mensagem inicial -->
   <div class="message-overlay" id="messageOverlay">
     <div class="message-box">
       <h1>💖De: Davi 💖</h1>
@@ -65,5 +57,4 @@
 
   <script src="index.js"></script>
 </body>
-
 </html>
