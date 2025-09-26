@@ -81,7 +81,7 @@ let value = 0n;
 function formatBig(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
 function stepCounter() {
   value += 500000n;
-  counter.textContent = `${formatBig(value)} ❤️\nMeu amor continuará a crescer ✨`;
+  counter.textContent = `${formatBig(value)}\n Ele continuará a crescer ✨`;
   requestAnimationFrame(stepCounter);
 }
 
@@ -110,20 +110,3 @@ closeMessage.addEventListener("click", () => {
   requestAnimationFrame(animateBar);
   requestAnimationFrame(stepCounter);
 });
-
-// Carrossel
-const slidesContainer = document.getElementById("slides");
-const slideCount = slidesContainer.children.length;
-const slideWidth = slidesContainer.children[0].offsetWidth + 20;
-let position = window.innerWidth;
-const speed = 1;
-
-function animateCarousel() {
-  position -= speed;
-  slidesContainer.style.left = position + "px";
-  if (position <= -slideWidth * slideCount) {
-    position = window.innerWidth;
-  }
-  requestAnimationFrame(animateCarousel);
-}
-animateCarousel();
