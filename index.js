@@ -81,7 +81,7 @@ let value = 0n;
 function formatBig(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
 function stepCounter() {
   value += 500000n;
-  counter.textContent = `${formatBig(value)}\n Ele continuará a crescer ✨`;
+  counter.textContent = `${formatBig(value)} ❤️\n Ele continuará a crescer ✨`;
   requestAnimationFrame(stepCounter);
 }
 
