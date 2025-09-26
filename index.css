@@ -39,7 +39,7 @@ body {
     z-index: -2;
 }
 
-/* partículas */
+/* estrelas */
 #stars {
     position: fixed;
     top: 0;
@@ -49,7 +49,7 @@ body {
     z-index: -4;
 }
 
-/* frases */
+/* frases animadas */
 .phrases {
     position: absolute;
     top: 10px;
@@ -59,7 +59,6 @@ body {
     font-size: 18px;
     font-weight: 500;
     color: #fff;
-    white-space: nowrap;
     text-align: center;
 }
 
@@ -147,9 +146,7 @@ body {
     box-shadow: 0 0 20px rgba(255, 107, 154, 0.5), 0 0 40px rgba(255, 195, 160, 0.3);
     display: flex;
     align-items: center;
-    /* vertical centralizado */
     justify-content: center;
-    /* horizontal centralizado */
     font-weight: bold;
     color: #fff;
     position: relative;
@@ -170,7 +167,6 @@ body {
     color: #fff;
     font-weight: 600;
 }
-
 
 /* contador infinito */
 .counter {
@@ -262,4 +258,38 @@ body {
 
 .message-box button:hover {
     transform: scale(1.05);
+}
+
+/* Responsividade */
+@media(max-width:480px) {
+    .heart {
+        font-size: 60px;
+    }
+
+    .message-box {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .message-box h1 {
+        font-size: 22px;
+    }
+
+    .message-box p {
+        font-size: 16px;
+    }
+
+    .counter {
+        font-size: 18px;
+    }
+
+    .bar {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .slides img {
+        width: 100px;
+        height: 100px;
+    }
 }

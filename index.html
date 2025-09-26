@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presente para Bolacha</title>
   <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
   <!-- vídeo de fundo -->
   <video autoplay muted loop class="video-bg" preload="auto">
     <source src="midias/video.mp4" type="video/mp4">
+    <source src="midias/video.webm" type="video/webm">
   </video>
   <div class="overlay"></div>
 
+  <!-- estrelas -->
   <canvas id="stars"></canvas>
 
   <!-- frases animadas -->
-  <div class="phrases" id="phrases">
+  <div class="phrases">
     <span id="phraseSpan"></span>
   </div>
 
   <!-- container central -->
   <div class="container">
-    <div class="heart"><h3 style="font-size: 25px;">❣️Se liga no meu amor por você ❣️</h3></div>
+    <div class="heart">
+      ❣️ Se liga no meu amor por você ❣️
+    </div>
 
     <!-- barra poética -->
     <div class="meter-wrap">
       <div class="meter">
         <div class="bar" id="bar"></div>
-      </div>  
+      </div>
+      <div class="bar-external-message" id="barExternalMessage">Meu amor continuará a crescer</div>
     </div>
 
     <!-- contador infinito -->
@@ -50,11 +57,11 @@
   <!-- mensagem inicial -->
   <div class="message-overlay" id="messageOverlay">
     <div class="message-box">
-      <h1>💖De: Davi 💖</h1>
-      <h1>💖Para: Bolacha 💖</h1>
+      <h1>💖 De: Davi 💖</h1>
+      <h1>💖 Para: Bolacha 💖</h1>
       <p id="timePassed"></p>
       <p>Desde que começamos como casal, estar feliz ainda é pouco para expressar como é ter você!</p>
-      <p>Desejo um feliz aniversário meu anjo❤️</p>
+      <p>Desejo um feliz aniversário meu anjo ❤️</p>
       <button id="closeMessage">💖 Fechar 💖</button>
     </div>
   </div>
