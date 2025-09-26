@@ -7,18 +7,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lucida Sans', sans-serif;
 }
 
 html,
 body {
     height: 100%;
     width: 100%;
-    font-family: 'Lucida Sans', sans-serif;
     color: #fff;
     overflow: hidden;
 }
 
-/* vídeo de fundo */
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    /* abaixo do overlay e acima do background preto */
+}
+
 .video-bg {
     position: fixed;
     top: 0;
@@ -26,7 +35,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -2;
+    /* acima do canvas de partículas */
 }
 
 .overlay {
@@ -36,17 +46,10 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.35);
-    z-index: -2;
+    z-index: -1;
+    /* acima do vídeo, faz escurecer um pouco */
 }
 
-#stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -4;
-}
 
 /* frases animadas */
 .phrases {
@@ -167,7 +170,6 @@ body {
 .carousel {
     width: 100%;
     height: 150px;
-    overflow: hidden;
     position: fixed;
     bottom: 10px;
     left: 0;
@@ -180,7 +182,6 @@ body {
     position: absolute;
     top: 0;
     left: 100%;
-    /* começa fora da tela à direita */
 }
 
 .slides img {
@@ -188,9 +189,15 @@ body {
     height: 120px;
     border-radius: 14px;
     object-fit: cover;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 0 0 50px rgba(255, 195, 160, 0.4);
+    transition: transform 0.3s, filter 0.3s;
+    filter: brightness(1.1) saturate(1.2);
 }
 
+.slides img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.3) saturate(1.3);
+}
 
 /* mensagem inicial fixa */
 .message-overlay {
