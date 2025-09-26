@@ -1,0 +1,265 @@
+:root {
+    --accent1: #ff6b9a;
+    --accent2: #ffc3a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Lucida Sans', sans-serif;
+    color: #fff;
+}
+
+/* vídeo de fundo */
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: -2;
+}
+
+/* partículas */
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -4;
+}
+
+/* frases */
+.phrases {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    overflow: hidden;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.phrases span {
+    display: inline-block;
+    animation: fadeText 3s ease-in-out infinite;
+}
+
+@keyframes fadeText {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* container central */
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.heart {
+    font-size: 90px;
+    margin-bottom: 20px;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(0.95);
+    }
+}
+
+/* barra poética */
+.meter-wrap {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px;
+    border-radius: 14px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.meter {
+    height: 28px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(255, 107, 154, 0.8), rgba(255, 195, 160, 0.8));
+    box-shadow: 0 0 20px rgba(255, 107, 154, 0.5), 0 0 40px rgba(255, 195, 160, 0.3);
+    display: flex;
+    align-items: center;
+    /* vertical centralizado */
+    justify-content: center;
+    /* horizontal centralizado */
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+    transition: width 0.05s linear;
+}
+
+.bar::after {
+    content: attr(data-stage);
+    position: absolute;
+    font-size: 14px;
+    color: #fff;
+}
+
+.bar-external-message {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+/* contador infinito */
+.counter {
+    font-size: 24px;
+    margin-top: 14px;
+    font-weight: 700;
+    text-align: center;
+    white-space: pre-line;
+}
+
+/* carrossel */
+.carousel {
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.slides {
+    display: flex;
+    gap: 20px;
+    animation: slide 30s linear infinite;
+}
+
+.slides img {
+    width: 150px;
+    height: 150px;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* mensagem inicial */
+.message-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.message-box {
+    background: linear-gradient(145deg, #ff6b9a, #ffc3a0);
+    padding: 30px 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255, 107, 154, 0.6);
+}
+
+.message-box h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.message-box p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.message-box button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    background: #fff;
+    color: #ff6b9a;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.message-box button:hover {
+    transform: scale(1.05);
+}
