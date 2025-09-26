@@ -54,7 +54,7 @@ body {
     top: 5%;
     width: 100%;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .phrases span {
@@ -88,7 +88,7 @@ body {
 }
 
 .heart {
-    font-size: 80px;
+    font-size: 70px;
     animation: pulse 1.6s ease-in-out infinite;
     margin-bottom: 15px;
 }
@@ -109,7 +109,7 @@ body {
 
 /* barra poética */
 .meter-wrap {
-    width: 300px;
+    width: 280px;
     background: rgba(255, 255, 255, 0.05);
     padding: 6px;
     border-radius: 14px;
@@ -144,58 +144,53 @@ body {
 .bar::after {
     content: attr(data-stage);
     position: absolute;
-    font-size: 14px;
+    font-size: 12px;
     color: #fff;
 }
 
 .bar-external-message {
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 5px;
     font-weight: 600;
 }
 
 /* contador infinito */
 .counter {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     text-align: center;
     white-space: pre-line;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-/* carrossel */
 .carousel {
-    position: absolute;
-    bottom: 10px;
     width: 100%;
+    height: 150px;
     overflow: hidden;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
     z-index: 1;
 }
 
 .slides {
     display: flex;
-    gap: 10px;
-    animation: slide 20s linear infinite;
+    gap: 20px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    /* começa fora da tela à direita */
 }
 
 .slides img {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
+    width: 120px;
+    height: 120px;
+    border-radius: 14px;
     object-fit: cover;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
 
 /* mensagem inicial fixa */
 .message-overlay {
@@ -221,19 +216,19 @@ body {
 }
 
 .message-box h1 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 8px;
 }
 
 .message-box p {
-    font-size: 14px;
-    margin: 5px 0;
+    font-size: 12px;
+    margin: 4px 0;
 }
 
 .message-box button {
-    margin-top: 10px;
-    padding: 8px 15px;
-    font-size: 14px;
+    margin-top: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
